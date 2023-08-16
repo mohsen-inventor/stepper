@@ -1,0 +1,186 @@
+@import '/_sass/shared.scss';
+
+.stepper,
+.stepsContainer,
+.StepsWrapper {
+    @include fullSpace;
+}
+
+.stepper {}
+
+.stepsContainer {
+    display: flex;
+}
+
+.StepsWrapper {
+    order: 2;
+    @include relativeFullSpace;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    order: 2;
+    overflow: auto;
+}
+
+// step
+.step {
+    opacity: 0;
+    visibility: hidden;
+    @include absoluteFullSpace;
+    flex: 0 0 100%;
+    background-color: $white;
+    transition: opacity 0.7s ease-in-out;
+    z-index: 0;
+
+    .stepContent {
+        @include flexCenter;
+        @include fullSpace;
+    }
+
+    .text,
+    .media {
+        transform: translateY(-50px);
+        flex: 0 0 50%;
+    }
+
+    .text {
+        padding: 0 20px;
+    }
+
+    // active step
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 100;
+    }
+}
+
+// pagination
+.pagination {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    height: 100%;
+    flex: 1 1 160px;
+    overflow: hidden;
+
+    // circle & line filling animation
+    .circle::before,
+    .percentage {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navLink {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        line-height: 1em;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+
+    .circle,
+    .label {
+        display: inline-block;
+    }
+
+    .circle {
+        position: relative;
+        flex: 0 0 18px;
+        width: 18px;
+        height: 18px;
+        background-color: $orange;
+
+        &,
+        &::before {
+            border-radius: 50%;
+        }
+
+        // circle fill
+        &::before {
+            content: '';
+            @include absoluteFullSpace;
+            transform-origin: center center;
+            border: 2px solid $orange;
+            background-color: $white;
+            z-index: 100;
+        }
+    }
+
+    .label {
+        flex: 1 1 auto;
+        @include paddingLeft(10px);
+    }
+
+    .progressBar {
+        @include absoluteFullSpace;
+        width: 18px;
+        z-index: -1;
+    }
+
+    .progress {
+        position: relative;
+        width: 1px;
+        height: 100%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        background-color: darken($grayLight, 10%);
+    }
+
+    .percentage {
+        @include absoluteFullSpace;
+        background-color: $orange;
+        z-index: 100;
+    }
+
+    // visited nav state (100% filled circle)
+    .navLink.visited {
+        .circle::before {
+            transform: scale(0);
+        }
+    }
+
+    // active nav state (80% filled circle)
+    .navLink.active {
+        .circle::before {
+            transform: scale(0.3);
+        }
+
+        .label {
+            font-weight: bold;
+        }
+    }
+}
+
+
+/*------------------------------------
+responsive
+-------------------------------------*/
+
+@include smallScreen {
+    .step {
+        .stepContent {
+            flex-direction: column;
+        }
+
+        .text,
+        .media {
+            flex: 1 1 auto;
+            width: 100%;
+            padding: 10px 40px;
+        }
+    }
+}
+
+@include xSmallScreen {
+    .step {
+
+        .text,
+        .media {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+}

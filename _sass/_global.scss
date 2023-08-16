@@ -1,0 +1,83 @@
+@import '/_sass/libs/reset.scss';
+@import '/_sass/_layout.scss';
+@import '/_sass/shared.scss';
+@import '/_sass/fonts/icons.scss';
+
+html,
+body {
+  direction: $direction;
+  min-height: 100%;
+}
+
+body {
+  font-family: $fontText;
+  font-size: 18px;
+  line-height: 1.8em;
+  color: $black;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $fontHeader;
+  line-height: 1.4em;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 38px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+p {
+  line-height: 1.8em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*----------------------------------------------------
+Global layout objects
+----------------------------------------------------*/
+
+.page {
+  // height: 100vh;
+  // scroll-snap-type: y mandatory;
+  // overflow-y: scroll;
+  // overflow: hidden; 
+}
+
+.pageContent {}
+
+.sectionSnap {
+  // height: 100vh;
+  // scroll-snap-align: start;
+}
+
+/*----------------------------------------------------
+responsive layout for tags and global CSS objects
+----------------------------------------------------*/
+@include smallScreen {
+  h1 {
+    font-size: 38px;
+    line-height: 1.4em;
+  }
+}
+
+@include xSmallScreen {
+  h1 {
+    font-size: 30px;
+    line-height: 1.4em;
+  }
+}

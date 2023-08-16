@@ -1,0 +1,41 @@
+@import '/_sass/fonts';
+
+/*----------------------------------------------------
+Fonts
+----------------------------------------------------*/
+
+$fontsFallback: sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
+
+// Main fonts
+$fontHeader: 'Tajawal', $fontsFallback;
+$fontText: 'Tajawal', $fontsFallback;
+
+/*----------------------------------------------------
+Colors
+----------------------------------------------------*/
+
+$black: #212b3a;
+$white: #fff;
+$grayLight: #eee;
+$orange: #e65841;
+$fuchsia: #F74687;
+$pink: #C054BF;
+$blue: #0076CE;
+$purple: #516CDB;
+$turquoise: #00729D;
+
+/*----------------------------------------------------
+Borders
+----------------------------------------------------*/
+$borderRadius: 8px;
+
+/*----------------------------------------------------
+Just for layout testing
+----------------------------------------------------*/
+$borderRed: thin solid red;
+$borderGreen: thin solid green;
+$borderBlue: thin solid blue;
+$bgRed: rgba(255, 0, 0, 0.1);
+$bgGreen: rgba(0, 255, 0, 0.1);
+$bgBlue: rgba(0, 0, 255, 0.1);

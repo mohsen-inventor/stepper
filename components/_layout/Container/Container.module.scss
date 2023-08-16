@@ -1,0 +1,50 @@
+@import '/_sass/shared.scss';
+
+.outerContainer {
+    position: relative;
+    height: 100vh;
+    padding: 0 40px;
+    overflow: hidden;
+}
+
+.innerContainer {
+    @include flexCenter;
+    height: 100%;
+    max-width: 2560px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+// container background colors
+.orange {
+    background-color: $orange;
+}
+
+.fuchsia {
+    background-color: $fuchsia;
+}
+
+.pink {
+    background-color: $pink;
+}
+
+.blue {
+    background-color: $blue;
+}
+
+.purple {
+    background-color: $purple;
+}
+
+.turquoise {
+    background-color: $turquoise;
+}
+
+/*------------------------------------
+Responsive
+-------------------------------------*/
+@include xSmallScreen {
+    .outerContainer {
+        padding: 0 20px;
+    }
+}

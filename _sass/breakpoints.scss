@@ -1,0 +1,110 @@
+// device orientation
+$portrait: portrait;
+$landscape: landscape;
+
+// X-large
+$xLargeMinWidth: 1441px;
+// Large (desktop)
+$largeMaxWidth: 1440px;
+// Medium (laptop)
+$mediumMaxWidth: 1024px;
+// Small (tablet)
+$smallMaxWidth: 768px;
+$smallMaxHeight: 1024px;
+// xSmall
+$xSmallMaxWidth: 580px;
+// Tiny (mobile)
+$tinyMaxWidth: 428px;
+$tinyMaxHeight: 926px;
+
+@mixin xLargeScreen {
+    @media (min-width: #{$xLargeMinWidth}) {
+        @content;
+    }
+}
+
+@mixin largeScreen {
+    @media (max-width: #{$largeMaxWidth}) {
+        @content;
+    }
+}
+
+@mixin mediumScreen {
+    @media (max-width: #{$mediumMaxWidth}) {
+        @content;
+    }
+}
+
+// From small screens and below we will specify the device orientation
+@mixin smallScreen {
+    @media (max-width: #{$smallMaxWidth}) {
+        @content;
+    }
+}
+
+@mixin smallScreenPortrait {
+    @media (max-width: #{$smallMaxWidth}) and (max-height: $smallMaxHeight) and (orientation: $portrait) {
+        @content;
+    }
+}
+
+@mixin smallScreenLandscape {
+    @media (max-width: #{$smallMaxHeight}) and (max-height: $smallMaxWidth) and (orientation: $landscape) {
+        @content;
+    }
+}
+
+@mixin xSmallScreen {
+    @media (max-width: #{$xSmallMaxWidth}) {
+        @content;
+    }
+}
+
+@mixin tinyScreen {
+    @media (max-width: #{$tinyMaxWidth}) {
+        @content;
+    }
+}
+
+@mixin tinyScreenPortrait {
+    @media (max-width: #{$tinyMaxWidth}) and (max-height: $tinyMaxHeight) and (orientation: $portrait) {
+        @content;
+    }
+}
+
+@mixin tinyScreenLandscape {
+    @media (max-width: #{$tinyMaxHeight}) and (max-height: $tinyMaxWidth) and (orientation: $landscape) {
+        @content;
+    }
+}
+
+// Custom breakpoints
+@mixin screen1920 {
+    @media (max-width: 1920px) {
+        @content;
+    }
+}
+
+@mixin screen1800 {
+    @media (max-width: 1800px) {
+        @content;
+    }
+}
+
+@mixin screen1700 {
+    @media (max-width: 1700px) {
+        @content;
+    }
+}
+
+@mixin screen1600 {
+    @media (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin screen1300 {
+    @media (max-width: 1300px) {
+        @content;
+    }
+}

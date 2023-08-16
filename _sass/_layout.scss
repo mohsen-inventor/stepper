@@ -1,0 +1,107 @@
+/*----------------------------------------------------
+layout config (vars and mixins)
+----------------------------------------------------*/
+
+// variables
+$direction: ltr !default;
+$left: left;
+$right: right;
+
+// Margin mixin
+@mixin margin($top, $right, $bottom, $left) {
+    @if $direction ==ltr {
+        margin-top: $top;
+        margin-right: $right;
+        margin-bottom: $bottom;
+        margin-left: $left;
+    }
+
+    @else {
+        margin-top: $top;
+        margin-right: $left;
+        margin-bottom: $bottom;
+        margin-left: $right;
+    }
+}
+
+// Margin left mixin
+@mixin marginLeft($value) {
+    @if $direction ==ltr {
+        margin-left: $value;
+    }
+
+    @else {
+        margin-right: $value;
+    }
+}
+
+// Margin right mixin
+@mixin marginRight($value) {
+    @if $direction ==ltr {
+        margin-right: $value;
+    }
+
+    @else {
+        margin-left: $value;
+    }
+}
+
+// Padding mixin
+@mixin padding($top, $right, $bottom, $left) {
+    @if $direction ==ltr {
+        padding-top: $top;
+        padding-right: $right;
+        padding-bottom: $bottom;
+        padding-left: $left;
+    }
+
+    @else {
+        padding-top: $top;
+        padding-right: $left;
+        padding-bottom: $bottom;
+        padding-left: $right;
+    }
+}
+
+// Padding left mixin
+@mixin paddingLeft($value) {
+    @if $direction ==ltr {
+        padding-left: $value;
+    }
+
+    @else {
+        padding-right: $value;
+    }
+}
+
+// Padding right mixin
+@mixin paddingRight($value) {
+    @if $direction ==ltr {
+        padding-right: $value;
+    }
+
+    @else {
+        padding-left: $value;
+    }
+}
+
+// absolute position mixin
+@mixin absoluteLeft($value) {
+    @if $direction ==ltr {
+        left: $value;
+    }
+
+    @else {
+        right: $value;
+    }
+}
+
+@mixin absoluteRight($value) {
+    @if $direction ==ltr {
+        right: $value;
+    }
+
+    @else {
+        left: $value;
+    }
+}
