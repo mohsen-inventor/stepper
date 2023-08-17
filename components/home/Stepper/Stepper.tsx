@@ -7,7 +7,6 @@ import Title from '@/components/_ui/Title/Title';
 
 // step data interface
 interface StepData {
-    isActive?: boolean;
     navLabel: string;
     title: string;
     description: string;
@@ -25,7 +24,6 @@ const Stepper = (props: Props) => {
     // local data
     const stepsData: StepData[] = [
         {
-            isActive: true,
             navLabel: "friendly",
             title: "Our Journey towards Digital Excellence",
             description: "Experience the transformation of a Saudi digital bank as it evolves from its humble origins to become a trailblazer in financial services, setting new standards for excellence in the digital realm.",
@@ -33,7 +31,6 @@ const Stepper = (props: Props) => {
             imgAlt: "D36 digital bank vision",
         },
         {
-            isActive: false,
             navLabel: "fast",
             title: "Revolutionizing Saudi Arabia's Banking Landscape",
             description: "reshaping the very essence of banking in the country by introducing an innovative mobile app that seamlessly merged cutting-edge security measures with unmatched convenience",
@@ -41,7 +38,6 @@ const Stepper = (props: Props) => {
             imgAlt: "D360 digital bank, Our achievements",
         },
         {
-            isActive: false,
             navLabel: "transparent",
             title: "Community Roots to Global",
             description: "Unveil the inspiring story of a Saudi digital bank that harnessed its strong community engagement to extend its influence globally, becoming a leading player in the international financial arena.",
@@ -49,7 +45,6 @@ const Stepper = (props: Props) => {
             imgAlt: "D360 digital bank, global reach",
         },
         {
-            isActive: false,
             navLabel: "secure",
             title: "Saudi Arabia's Green Approach to Digital Banking Success",
             description: "Dive into the narrative of a Saudi digital bank that not only achieved financial success but also carved a distinctive path by embracing sustainability at its core",
