@@ -88,6 +88,10 @@ const Stepper = (props: Props) => {
         )
     }
 
+    const goToSlide = (index: number) => {
+        setCurrentStepIndex(index);
+    }
+
     const applyNavActiveClass = (index: number) => {
         if (index === currentStepIndex) {
             return css.active;
@@ -111,7 +115,7 @@ const Stepper = (props: Props) => {
                     </div>
                     <div className={`${css.pagination}`}>
                         {stepsData.map((step, index) => (
-                            <div className={`${css.navLink} ${applyNavActiveClass(index)}`} key={`key-${index}`}>
+                            <div className={`${css.navLink} ${applyNavActiveClass(index)}`} onClick={() => goToSlide(index)} key={`key-${index}`}>
                                 <span className={css.circle}></span>
                                 <span className={css.label}>{step.navLabel}</span>
                             </div>

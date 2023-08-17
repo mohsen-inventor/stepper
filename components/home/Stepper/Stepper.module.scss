@@ -67,6 +67,7 @@
     overflow: hidden;
 
     // circle & line filling animation
+    .circle,
     .circle::before,
     .percentage {
         transition: all 0.3s ease-in-out;
@@ -78,7 +79,15 @@
         width: 100%;
         line-height: 1em;
         text-transform: capitalize;
-        cursor: pointer;
+
+        &:hover {
+            cursor: pointer;
+            font-weight: bold;
+
+            .circle::before {
+                transform: scale(0.5);
+            }
+        }
     }
 
     .circle,
@@ -111,11 +120,14 @@
 
     .label {
         flex: 1 1 auto;
+        line-height: 3em;
         @include paddingLeft(10px);
     }
 
     .progressBar {
         @include absoluteFullSpace;
+        height: 90%;
+        top: 5%;
         width: 18px;
         z-index: -1;
     }
